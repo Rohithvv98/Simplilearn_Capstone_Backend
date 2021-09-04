@@ -8,6 +8,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -16,7 +17,6 @@ import com.app.foodbox.model.Product;
 import com.app.foodbox.model.User;
 import com.app.foodbox.service.ProductService;
 import com.app.foodbox.service.UserService;
-
 
 
 @SpringBootApplication
@@ -38,7 +38,7 @@ public class FoodboxApplication implements ApplicationRunner{
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration=new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
-		corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+		corsConfiguration.setAllowedOrigins(Arrays.asList("http://capstone-frontend-angular.s3-website-us-east-1.amazonaws.com/"));
 		corsConfiguration.setAllowedHeaders(Arrays.asList("Origin","Access-Control-Allow-Origin","Content-Type",
 				"Accept","Authorization","Origin, Accept","X-Requested-With","Access-control-Request-Method","Access-control-Request-Headers"));
 		corsConfiguration.setExposedHeaders(Arrays.asList("Origin","Content-Type","Accept","Authorization","Access-Control-Allow-Origin"
